@@ -95,7 +95,7 @@ async function getDeleteRoles() {
         let text = allRoles[i].name.replace("ROLE_", "");
         // получаем значение для элемента, stringify() для преобразования объектов в JSON
         let json = JSON.stringify(allRoles[i])
-        // создаем новый элемента, где text будет помещен между ><, а json в option
+
         selectDelete.options[i] = new Option(text, json)
     }
 }
@@ -108,7 +108,7 @@ async function getNewRoles() {
         let text = allRoles[i].name.replace("ROLE_", "");
         // получаем значение для элемента, stringify() для преобразования объектов в JSON
         let json = JSON.stringify(allRoles[i])
-        // создаем новый элемента, где text будет помещен между ><, а json в option
+
         selectNew.options[i] = new Option(text, json)
     }
 }
@@ -140,7 +140,6 @@ on(document, 'click', '.btnEdit', async e => {
     editEmail.value = emailForm
     editPassword.value = passwordForm
     res = getEditRoles()
-    console.log(res + ' - Модальное окно изменения вызвано')
     modalEditBootstrap.show()
 })
 
@@ -201,7 +200,6 @@ on(document, 'click', '.btnDelete', e => {
     deleteEmail.value = emailForm
     deletePassword.value = passwordForm
     res = getDeleteRoles()
-    console.log(res + ' - Модальное окно удаления вызвано')
     modalDeleteBootstrap.show()
 })
 
@@ -233,7 +231,7 @@ newUser.addEventListener('submit', async e => {
     const roleListJSON = '[' + values + ']'
     const roleList = JSON.parse(roleListJSON)
     const newUser = {}
-    newUser.ame = newName.value
+    newUser.name = newName.value
     newUser.age = newAge.value
     newUser.email = newEmail.value
     newUser.password = newPassword.value
