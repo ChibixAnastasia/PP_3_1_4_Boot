@@ -245,6 +245,7 @@ newUser.addEventListener('submit', async e => {
     })
 
     let idTTT = await response.json()
+
     document.getElementById('allUsersBody').innerHTML += `<tr id="row${newUser.id}">
                             <td>${idTTT}</td>
                             <td>${newUser.name}</td>
@@ -258,6 +259,7 @@ newUser.addEventListener('submit', async e => {
 
 
     document.getElementById('tab-1').className = 'tab-pane active'
+
     document.getElementById('newUser').className = 'tab-pane text-center'
 
 })
