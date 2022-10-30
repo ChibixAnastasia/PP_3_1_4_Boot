@@ -12,7 +12,7 @@ function roleOfUser(roles) {
 
 
 async function navInfoAdmin() {
-    const response = await fetch('http://localhost:8080/api/user')
+    const response = await fetch('http://localhost:8080/rest/user')
     const authUser = await response.json()
 
     const infoUsername = document.getElementById("infoUsername")
@@ -48,7 +48,7 @@ const usersRows = (users) => {
 
 async function getUsers() {
     try {
-        const response = await fetch('http://localhost:8080/api/users')
+        const response = await fetch('http://localhost:8080/rest/users')
         const users = await response.json()
         await usersRows(users)
     } catch (e) {
@@ -69,7 +69,7 @@ const on = (element, event, selector, handler) => {
     })
 }
 
-const urlRoles = 'http://localhost:8080/api/roles'
+const urlRoles = 'http://localhost:8080/rest/roles'
 const selectEdit = document.getElementById('editRoles')
 const selectDelete = document.getElementById('deleteRoles')
 const selectNew = document.getElementById('newRoles')

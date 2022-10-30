@@ -44,6 +44,7 @@
                             <a th:href="@{/adduser}" style="all: unset; width: 50%;"><button type="button" class="btn w-100" style="background: transparent; color: blueviolet;">
                                 New User</button></a>
                         </div>
+
                         <div class="card">
                             <div class="card-header font-weight-bold"><h4>All users</h4></div>
                             <div class="card-body">
@@ -59,13 +60,7 @@
                                         <th>Delete</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr th:each="user : ${userAll}"  >
-                                        <td th:text="${user.id}"></td>
-                                        <td th:text="${user.name}"></td>
-                                        <td th:text="${user.age}"></td>
-                                        <td th:text="${user.email}"></td>
-                                        <td><a th:each="role :${user.roles}" th:text="${role.getRole()} + ' '"></a></td>
+                                    <tbody id="allUsersBody">
 
                                         <!-- edit-->
                                         <td>

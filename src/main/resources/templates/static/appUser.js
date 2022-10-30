@@ -12,7 +12,7 @@ function roleOfUser(roles) {
 
 
 async function navInfoAdmin() {
-    const response = await fetch('http://localhost:8080/api/user')
+    const response = await fetch('http://localhost:8080/rest/user')
     const authUser = await response.json()
     const infoUsername = document.getElementById("infoUsername")
     infoUsername.innerHTML = authUser.username
@@ -41,7 +41,7 @@ const bodyUser = document.getElementById("bodyUser")
 let resultUser = ''
 
 async function userInfo() {
-    const response = await fetch('http://localhost:8080/api/user')
+    const response = await fetch('http://localhost:8080/rest/user')
     const authUser = await response.json()
     resultUser = `<tr>
                             <td>${authUser.id}</td>

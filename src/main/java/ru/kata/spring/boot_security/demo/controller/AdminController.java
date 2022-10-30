@@ -23,8 +23,11 @@ public class AdminController {
         this.userService = userService;
     }
 
+    public String currentUser (){
+        return "admin";
+    }
 
-
+/*
     @GetMapping("/admin")
     public String getAllUsers(ModelMap model){
         User admin = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -59,6 +62,6 @@ public class AdminController {
     public String deleteUser(@PathVariable("id")long id){
         userService.removeUserById(id);
         return "redirect:/admin";
-    }
+    }*/
 
 }
